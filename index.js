@@ -1,4 +1,5 @@
-    let url= 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
+async function getCocktails(cocktail){
+let url= 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
     if (cocktail==null){
         url= 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
     }
@@ -112,4 +113,4 @@
                         
             
         });
-   
+    }
