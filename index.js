@@ -9,7 +9,16 @@
     fetch(url)
     .then(response => response.json())
     .then(cocktails => {
-        // Display the list of all the movie names
+        // Display the list of cocktails searched in cards
         const list= document.querySelector('#cocktailsList');
         
+        let cocktailCard = `
+        <div class="card" style="width:400px">
+            <div class="card-body">
+                <h4 class="card-title">_COCKTAILNAME_</h4>
+                <img class="card-img-bottom" src="_COCKTAILIMAGE_" alt="_COCKTAILNAME_" style="width:100%">
+                <p class="card-text">_INGREDIENTS_</p>        
+            </div>
+        </div>
+      `
     });
