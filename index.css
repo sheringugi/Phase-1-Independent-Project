@@ -48,4 +48,69 @@
     font-size: 17px;
   }
 
- 
+  
+h2 {
+    background-color: rgb(12, 15, 59);
+}
+
+  
+  .glow {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #8d9732, 0 0 40px #758843, 0 0 50px #383109, 0 0 60px #3d3304, 0 0 70px #362f33;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #ffffff, 0 0 30px #6d339c, 0 0 40px #412432, 0 0 50px #4310bb, 0 0 60px #32aa68, 0 0 70px #378888, 0 0 80px #9226ad;
+    }
+  }
+  .card button{
+    background: #575394;
+    border-color: #575394;  
+
+  }
+  .card h4 {
+    color: rgb(151, 148, 86);
+  }
+
+  .card p {
+    font-size: medium;
+    color: #807777; /* Lightest grey with 4.5:1 contrast over white */
+    line-height: 1.5; /* Space between lines of the paragraph */
+  }
+  .card label {
+    color: black;
+  }
+  span {
+    font-weight: 100;
+    font-style: oblique;
+    font-size: large;
+
+  }
+.dropdown {
+    color: rgb(75, 81, 134) ;
+}
+body {
+    
+    background-color: rgb(12, 15, 59)!important;
+}
+.card, .modal-dialog {
+    
+    background-color:azure!important;
+}
+button {
+    background: #342653!important;
+
+}
+.close {
+    background: none!important;
+}
+#close-btn {
+    background: none!important;
+}

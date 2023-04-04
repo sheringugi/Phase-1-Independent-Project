@@ -1,4 +1,4 @@
-async function getCocktails(cocktail){
+async function getCocktails(cocktail, language){
 let url= 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
     if (cocktail==null){
         url= 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
@@ -86,6 +86,29 @@ let url= 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
             tempCocktailCard = tempCocktailCard.replace(/_COCKTAILIMAGE_/g, drink.strDrinkThumb);
             tempCocktailCard = tempCocktailCard.replace(/_COCKTAILNAME_/g, drink.strDrink);
             tempCocktailCard = tempCocktailCard.replace(/_INGREDIENTS_/g, ingredients);
+
+            // Add dropdown menu to select language in which instructions will be relayed
+            let language_prompt = "Instructions not available in "
+            switch(language) {
+                case "English":
+                    tempCocktailCard = tempCocktailCard.replace(/_INSTRUCTIONS_/g, drink.strInstructions);
+                    break;
+                case "French":
+                    tempCocktailCard = tempCocktailCard.replace(/_INSTRUCTIONS_/g, (drink.strInstructionsFR === null) ? language_prompt + language: drink.strInstructionsFR);
+                    break;
+                case "Spanish":
+                    tempCocktailCard = tempCocktailCard.replace(/_INSTRUCTIONS_/g, (drink.strInstructionsES === null) ? language_prompt + language: drink.strInstructionsES);
+                    break;
+                case "Italian":
+                    tempCocktailCard = tempCocktailCard.replace(/_INSTRUCTIONS_/g, (drink.strInstructionsIT === null) ? language_prompt + language: drink.strInstructionsIT);
+                    break;
+                case "Dutch":
+                    tempCocktailCard = tempCocktailCard.replace(/_INSTRUCTIONS_/g, (drink.strInstructionsDE === null) ? language_prompt + language: drink.strInstructionsDE);
+                    break;
+                default:
+                    tempCocktailCard = tempCocktailCard.replace(/_INSTRUCTIONS_/g, drink.strInstructions);
+                    break;
+            }
             
             
             // limit the number of cards displayed on one row to four
@@ -114,24 +137,21 @@ let url= 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
             
         });
     }
+
+let search = null
+
 document.addEventListener('DOMContentLoaded', (e) =>{
     getCocktails(null)
 });
-function addEventListenerForLikes() {
-        let likes= document.getElementsByName('heart')
-        likes.forEach((like) => {
-            like.addEventListener('click', () => {
-                console.log("you clicked me")
-                if (like.classList.contains("fa-heart-o")) {
-                    like.classList.remove("fa-heart-o");
-                } else {
-                    like.classList.remove("fa-heart");
-                      like.classList.add("fa-heart");
-                    like.classList.add("fa-heart-o");
-                  }
-                console.log('some event content here...')
-            })
-        });
-    }
 
+const input = document.querySelector("input");
+input.addEventListener("input", (e)=>{
+    search = e.target.value
+    getCocktails(search)
+});
+
+const languageDropdown = document.querySelector("#languages");
+languageDropdown.addEventListener("click", (e)=>{
+    getCocktails(search, e.target.innerText)
+});
     
