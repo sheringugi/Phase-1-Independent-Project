@@ -114,7 +114,24 @@ let url= 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
             
         });
     }
-    document.addEventListener('DOMContentLoaded', (e) =>{
-        getCocktails(null)
-    });
+document.addEventListener('DOMContentLoaded', (e) =>{
+    getCocktails(null)
+});
+function addEventListenerForLikes() {
+        let likes= document.getElementsByName('heart')
+        likes.forEach((like) => {
+            like.addEventListener('click', () => {
+                console.log("you clicked me")
+                if (like.classList.contains("fa-heart-o")) {
+                    like.classList.remove("fa-heart-o");
+                } else {
+                    like.classList.remove("fa-heart");
+                      like.classList.add("fa-heart");
+                    like.classList.add("fa-heart-o");
+                  }
+                console.log('some event content here...')
+            })
+        });
+    }
+
     
