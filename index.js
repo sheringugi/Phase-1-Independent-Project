@@ -18,7 +18,36 @@
             <img class="card-img-bottom" src="_COCKTAILIMAGE_" alt="_COCKTAILNAME_" style="width:100%">
             <p class="card-text">_INGREDIENTS_</p>        
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal_MODALNUMBER_">How to Brew</button>
-                        </div>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal_MODALNUMBER_" role="dialog">
+                <div class="modal-dialog">
+                
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <div class="text-center">
+                        <h4 class="modal-title">_COCKTAILNAME_</h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- <p>Click on the heart to love or un-love this post.</p>
+                    <span name ="heart" id="heart_HEART_"><i class="fa fa-heart" aria-hidden="true"></i> </span>-->
+                    
+                    <div class="modal-body">
+                    <img class="card-img-bottom" src="_COCKTAILIMAGE_" alt="_COCKTAILNAME_" style="width:100%">
+                    <label>Ingredients</label>
+                    <p class="card-text">_INGREDIENTS_</p>
+                    <label>Instructions</label>
+                    <p>_INSTRUCTIONS_</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="close-btn" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            </div>
         </div>
       `
       //create empty string to hold each cocktail upon iteration
@@ -31,6 +60,13 @@
             if (cocktail == null) {
                 search = drink.strDrink
             }
+            
+            
+
+            //replace placeholders with the data to be dispalyed in the cards
+            tempCocktailCard= cocktailCard
+            tempCocktailCard = tempCocktailCard.replace(/_COCKTAILIMAGE_/g, drink.strDrinkThumb);
+            tempCocktailCard = tempCocktailCard.replace(/_COCKTAILNAME_/g, drink.strDrink);
+            
         });
     });
-            
