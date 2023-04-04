@@ -16,7 +16,7 @@
             <div class="card-body">
             <h4 class="card-title">_COCKTAILNAME_</h4>
             <img class="card-img-bottom" src="_COCKTAILIMAGE_" alt="_COCKTAILNAME_" style="width:100%">
-            <p class="card-text">_INGREDIENTS_</p>        
+            <p class="card-text">_INGREDIENTS_</p> 
             </div>
         </div>
       `
@@ -30,6 +30,7 @@
             if (cocktail == null) {
                 search = drink.strDrink
             }
+            
             //create empty string to hold ingredients of individual cocktail
             let ingredients = ""
             ingredients  += (drink.strIngredient1 === null) ? '' : drink.strIngredient1 + ', ';
@@ -53,6 +54,30 @@
             tempCocktailCard = tempCocktailCard.replace(/_COCKTAILIMAGE_/g, drink.strDrinkThumb);
             tempCocktailCard = tempCocktailCard.replace(/_COCKTAILNAME_/g, drink.strDrink);
             tempCocktailCard = tempCocktailCard.replace(/_INGREDIENTS_/g, ingredients);
-             
+            
+            // limit the number of cards displayed on one row to four
+            tempCocktailCard = tempCocktailCard.replace(/_MODALNUMBER_/g, count);
+            if (count%4===0){
+                cocktailRow+= tempCocktailCard + `</div>`
+                aggregateCocktails += cocktailRow
+                if (count!==cocktails.drinks.count){
+                    cocktailRow= `<div class="row">`
+                }
+            }
+            else{
+                cocktailRow+= tempCocktailCard 
+            }
+            
+            count++
+            
+                    
         });
-    });
+        if (count < 4) {
+            aggregateCocktails += tempCocktailCard + `</div>`
+        }
+        //append the element: cards for cocktail(s) searched
+        list.innerHTML= aggregateCocktails;
+                        
+            
+        });
+   
