@@ -31,9 +31,6 @@ let url= 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
                     </div>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                    <!-- <p>Click on the heart to love or un-love this post.</p>
-                    <span name ="heart" id="heart_HEART_"><i class="fa fa-heart" aria-hidden="true"></i> </span>-->
-                    
                     <div class="modal-body">
                     <img class="card-img-bottom" src="_COCKTAILIMAGE_" alt="_COCKTAILNAME_" style="width:100%">
                     <label>Ingredients</label>
