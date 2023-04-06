@@ -8,17 +8,18 @@ The main function of the code is `getCocktails()`, which takes two arguments: `c
 
 The function also creates a modal box for each cocktail card, which is displayed when the "How to Brew" button on the card is clicked. The modal box contains more details about the cocktail, including the instructions for making it.
 
-The modal dialog box contains the following information:
+The modal dialog box contains the following information: -
 
-**Cocktail name**
+*1. Cocktail name*
 
-**Image**
+*2. Image*
 
-**List of ingredients**
+*3. List of ingredients*
 
-**Instructions for making the cocktail in language selected**
+*4. Instructions for making the cocktail in language selected*
 
-### Installation and Setup
+## Installation and Setup
+
 To use this application, follow these steps:
 
 1. Clone this [repository](https://github.com/sheringugi/Phase-1-Independent-Project) to your local machine.
@@ -45,7 +46,7 @@ getCocktails();
 
 This will return a random cocktail.
 
-# Access to Cocktail O'clock App
+## Access to Cocktail O'clock App
 
 This application has been deployed using Github Pages. Click [here](https://sheringugi.github.io/Phase-1-Independent-Project/) to access Cocktail O'clock App.  
 
