@@ -27,13 +27,11 @@ To use the application, open the `index.html` file in a web browser. You can the
 ### Example
 
 ````
-scss
 getCocktails("margarita");
 ````
 This will search for a cocktail with the name "margarita".
 
 ````
-scss
 getCocktails();
 ````
 
@@ -53,6 +51,10 @@ Bootstrap v4.5.3
 Font Awesome v5.15.3
 
 These dependencies are included in the index.html file.
+
+# Access to Cocktail O'clock App
+
+This application has been deployed using Github Pages. Click [here](https://sheringugi.github.io/Phase-1-Independent-Project/) to access Cocktail O'clock App.  
 
 ## License
 
